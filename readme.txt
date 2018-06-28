@@ -42,3 +42,11 @@ Attributes initialize DOM properties and then they are done. Attributes values c
 once they are initialized.
 
 Property values can change
+
+## STRUCTUREL DIRECTIVES
+
+directives that let you add or remove HTML elements from the DOM.
+Commonly used structural directives:
+ * ngIf  -- used to conditionally render HTML elements
+ * ngSwitch -- used to conditionally render HTML elements
+ * ngFor -- used to render a list of HTML elements
