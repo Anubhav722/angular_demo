@@ -31,6 +31,13 @@ import { Component, OnInit } from '@angular/core';
   	<h2 [style.color]="hasError ? 'red' : 'green'">Style Binding 2</h2>
   	<h2 [style.color]="highlightColor">Style Binding 3</h2>
   	<h2 [ngStyle]="titleStyles">Style Binding 4</h2>
+
+  	<button (click)="greeting='Welcome Anubhav'">Greet Inline</button>
+  	<button (click)="onClick($event)">Greet</button>
+  	{{greeting}}
+
+  	<input #myInput type="text">
+  	<button (click)="logMethod(myInput.value)">Log</button>
   `,
   styles: [`
   	.text-success {
@@ -70,11 +77,23 @@ export class TestComponent implements OnInit {
   public titleStyles = {
   	color: "blue",
   	fontStyle: "italic",
-
   }
+  public greeting = "";
   constructor() { }
+  // all methods over here.
 
   ngOnInit() {
+  }
+
+  // using event binding
+  onClick(event) {
+  	console.log(event);
+  	this.greeting = "Welcome to my site";
+  }
+
+  // template reference variables
+  logMessage(value) {
+  	console.log(value);
   }
 
   greetUser() {
