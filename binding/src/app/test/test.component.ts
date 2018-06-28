@@ -38,6 +38,9 @@ import { Component, OnInit } from '@angular/core';
 
   	<input #myInput type="text">
   	<button (click)="logMethod(myInput.value)">Log</button>
+
+  	<input [(ngModel)]="value" type="text">
+  	{{value}}
   `,
   styles: [`
   	.text-success {
@@ -79,6 +82,11 @@ export class TestComponent implements OnInit {
   	fontStyle: "italic",
   }
   public greeting = "";
+
+  // two way binding
+  public value = "";
+
+
   constructor() { }
   // all methods over here.
 
@@ -92,7 +100,7 @@ export class TestComponent implements OnInit {
   }
 
   // template reference variables
-  logMessage(value) {
+  logMethod(value) {
   	console.log(value);
   }
 
