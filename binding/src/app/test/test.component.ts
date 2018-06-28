@@ -25,7 +25,12 @@ import { Component, OnInit } from '@angular/core';
   	<input [id]="myId" type="text" value="Anubhav">
   	<input [disabled]="isDisabled" id={{myId}} type="text" value="Anubhav">
 
-  	<h2 [ngClass]="messageClasses">Check for me</h2>
+  	<h2 [ngClass]="messageClasses">Class Binding</h2>
+
+  	<h2 [style.color]="'orange'">Style Binding</h2>
+  	<h2 [style.color]="hasError ? 'red' : 'green'">Style Binding 2</h2>
+  	<h2 [style.color]="highlightColor">Style Binding 3</h2>
+  	<h2 [ngStyle]="titleStyles">Style Binding 4</h2>
   `,
   styles: [`
   	.text-success {
@@ -58,6 +63,14 @@ export class TestComponent implements OnInit {
   	"text-success": !this.hasError,
   	"text-danger" : this.hasError,
   	"text-special": this.isSpecial
+  }
+
+  // using style binding
+  public highlightColor = "orange";
+  public titleStyles = {
+  	color: "blue",
+  	fontStyle: "italic",
+
   }
   constructor() { }
 
