@@ -50,3 +50,10 @@ Commonly used structural directives:
  * ngIf  -- used to conditionally render HTML elements
  * ngSwitch -- used to conditionally render HTML elements
  * ngFor -- used to render a list of HTML elements
+
+
+## DESIGN PATTERN
+DI AS DESIGN PATTERN
+
+DI is a coding pattern i which a class receives its dependencies from external sources rather than
+creating them itself.
