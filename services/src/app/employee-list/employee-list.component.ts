@@ -20,7 +20,11 @@ export class EmployeeListComponent implements OnInit {
   ngOnInit() {
     // fetch the employee data inside this method.
     // This method gets called once the Component has been initialized.
-    this.employees = this._employeeService.getEmployees();
+    // this.employees = this._employeeService.getEmployees();
+  
+     this._employeeService.getEmployees()
+       .subscribe(data => this.employees = data);
+
   }
 
 }
