@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  // sending data from parent component to child component
+  public name = "Anubhav";
+
+  // receiveing data from child component to parent component
+  public message = "";
 }

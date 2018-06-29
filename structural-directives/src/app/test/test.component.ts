@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -49,6 +49,17 @@ import { Component, OnInit } from '@angular/core';
   	<div *ngFor="let color of colors; even as e">
   		<h2>{{e}} {{color}}</h2>
   	</div>
+
+
+  	<h2> Understanding Component Interaction </h2>
+  	<h2>sending data from parent component to child component</h2>
+  	<h2>{{"Hello " + parentData}}</h2>
+  	<h2>{{"Hello " + anyvariable}}</h2>
+
+  	<h2>sending data from child component to parent component.</h2>
+  	<button (click)="fireEvent()">Send event</button>
+
+
   `,
   styleUrls: ['./test.component.css']
 })
@@ -63,9 +74,22 @@ export class TestComponent implements OnInit {
   // ngFor directive
   public colors = ["red", "blue", "green", "yellow"];
 
+  // understanding component interaction (two ways)
+  // sending data from parent component to child component
+  // `app` is parent component, whereas `test` is child component.
+  @Input() public parentData;
+  @Input('parentData') public anyvariable;
+
+  // sending data from child component to parent component.
+  @Output() public childEvent = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  fireEvent() {
+  	this.childEvent.emit('The evolution');
   }
 
 }
