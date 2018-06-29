@@ -14,6 +14,7 @@ iii. METADATA - information angular needs to decide if the particular class is i
 				(defined using a decorator)
 
 
+Creating an angular component (cli): `ng g c <component-name>`
 
 ## ATTRIBUTES AND PROPERTY
 
@@ -57,3 +58,26 @@ DI AS DESIGN PATTERN
 
 DI is a coding pattern i which a class receives its dependencies from external sources rather than
 creating them itself.
+
+## SERVICE
+
+A class with a specific purpose
+ * Share data
+ * Implement application logic
+ * External interaction (interaction with the database)
+
+Naming convention: .service.ts
+
+
+## DI as a framework contd.
+
+1. Define the EmployeeService class.
+2. Register with injector
+3. Declare as dependency in EmpList and EmpList
+
+Creating a service using angular cli: `ng g s <service-name>`.
+
+Hierarchial DI in Angular
+
+Always register the service in the module level.
+Include it by writing in the `app.module.ts` in the providers array.
