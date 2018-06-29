@@ -81,3 +81,21 @@ Hierarchial DI in Angular
 
 Always register the service in the module level.
 Include it by writing in the `app.module.ts` in the providers array.
+
+## OBSERVABLES
+
+A sequence of items that arrive asynchronously over time.
+
+HTTP call -- single item
+Single item -- HTTP Response
+
+HTTP, Observables and RxJS
+
+1. HTTP get requests from EmpService
+2. Receive the observable and cast it into an employee array
+3. Subsribe to the observable from EmpList and EmpDetail
+4. Assign the employee array to a local variable.
+
+RxJS
+- Reactive extensions for JavaScript
+- External libraries to work with observables.
